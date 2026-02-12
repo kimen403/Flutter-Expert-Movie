@@ -1,0 +1,29 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/qg8Gv2w0dDL8cMsG2QO2hWp58wy.jpg",
+      "genre_ids": [
+        10765,
+        9648,
+        35
+      ],
+      "id": 119051,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Wednesday",
+      "overview": "Smart, sarcastic and a little dead inside, Wednesday Addams investigates twisted mysteries while making new friends — and foes — at Nevermore Academy.",
+      "popularity": 344.95,
+      "poster_path": "/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
+      "first_air_date": "2022-11-23",
+      "name": "Wednesday",
+      "vote_average": 8.401,
+      "vote_count": 9511
+    }
+  ],
+  "total_pages": 10181,
+  "total_results": 203617
+}

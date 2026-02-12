@@ -1,0 +1,29 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/path.jpg",
+            "genre_ids": [
+                1,
+                2,
+                3
+            ],
+            "id": 1,
+            "origin_country": [
+                "US"
+            ],
+            "original_language": "en",
+            "original_name": "Test Series",
+            "overview": "Test overview",
+            "popularity": 1.0,
+            "poster_path": "/path.jpg",
+            "first_air_date": "2022-01-01",
+            "name": "Test Series",
+            "vote_average": 8.0,
+            "vote_count": 100
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 1
+}
