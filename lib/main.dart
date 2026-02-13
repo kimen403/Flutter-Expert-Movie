@@ -27,6 +27,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ditonton/common/ssl_pinning.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'firebase_options.dart';
@@ -37,6 +38,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Hive.initFlutter();
+  await SSLPinningHelper.createClient();
   di.init();
   runApp(MyApp());
 }

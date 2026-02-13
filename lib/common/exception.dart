@@ -9,3 +9,9 @@ class DatabaseException implements Exception {
 
   DatabaseException(this.message);
 }
+
+class SSLException implements Exception {
+  final String message;
+
+  SSLException(this.message);
+}
