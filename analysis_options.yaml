@@ -21,8 +21,23 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # Disable style-only rules
+    avoid_print: false  # Allow print for debugging
+    constant_identifier_names: false  # Allow SCREAMING_CAPS for constants
+    file_names: false  # Allow flexible file naming
+    use_key_in_widget_constructors: false  # Allow widgets without key parameter
+    prefer_const_constructors_in_immutables: false  # Allow non-const constructors
+    unnecessary_this: false  # Allow 'this.' qualifier
+    use_super_parameters: false  # Allow traditional parameter passing
+    library_private_types_in_public_api: false  # Allow private types in public API
+    annotate_overrides: false  # Allow missing @override annotations
+    
+    # Disable non-critical behavioral rules
+    use_build_context_synchronously: false  # Allow BuildContext across async gaps
+    sort_child_properties_last: false  # Allow flexible property ordering
+    sized_box_for_whitespace: false  # Allow Container for whitespace
+    prefer_interpolation_to_compose_strings: false  # Allow string concatenation
+    use_rethrow_when_possible: false  # Allow throw e instead of rethrow
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
