@@ -15,9 +15,10 @@ class SSLPinningHelper {
       // Load certificate
       final sslCert = await rootBundle.load('certificates/tmdb.pem');
       SecurityContext securityContext = SecurityContext(withTrustedRoots: true);
-      
+
       try {
-        securityContext.setTrustedCertificatesBytes(sslCert.buffer.asUint8List());
+        securityContext
+            .setTrustedCertificatesBytes(sslCert.buffer.asUint8List());
       } catch (e) {
         print('Warning: Could not load custom certificate: $e');
         // Continue with default trusted roots
