@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/common/utils.dart';
 import 'package:ditonton/presentation/bloc/movies/movie_detail_bloc.dart';

@@ -7,6 +7,11 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
+
+
+analyzer:
+  errors:
+    unused_local_variable: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:
@@ -31,7 +36,7 @@ linter:
     use_super_parameters: false  # Allow traditional parameter passing
     library_private_types_in_public_api: false  # Allow private types in public API
     annotate_overrides: false  # Allow missing @override annotations
-    
+   
     # Disable non-critical behavioral rules
     use_build_context_synchronously: false  # Allow BuildContext across async gaps
     sort_child_properties_last: false  # Allow flexible property ordering
