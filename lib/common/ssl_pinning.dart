@@ -14,29 +14,25 @@ class SSLPinningHelper {
     try {
       // Load certificate
       final sslCert = await rootBundle.load('certificates/tmdb.pem');
-      SecurityContext securityContext = SecurityContext(withTrustedRoots: true);
-
-      try {
-        securityContext
-            .setTrustedCertificatesBytes(sslCert.buffer.asUint8List());
-      } catch (e) {
-        print('Warning: Could not load custom certificate: $e');
-        // Continue with default trusted roots
-      }
+      
+      // Create SecurityContext with only our pinned certificate
+      // withTrustedRoots: false means we don't trust system certificates
+      SecurityContext securityContext = SecurityContext(withTrustedRoots: false);
+      
+      // Set our trusted certificate
+      securityContext.setTrustedCertificatesBytes(sslCert.buffer.asUint8List());
 
       // Create HTTP client with pinned certificate
       HttpClient httpClient = HttpClient(context: securityContext);
-      httpClient.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
-        // Only allow connections to themoviedb.org
-        return host.contains('themoviedb.org');
-      };
+      
+      // Do not set badCertificateCallback - let the SecurityContext handle validation
+      // If certificate doesn't match, connection will fail (which is what we want)
 
       _clientInstance = IOClient(httpClient);
     } catch (e) {
       print('Error creating SSL client: $e');
-      // Fallback to default HTTP client
-      _clientInstance = http.Client();
+      // Re-throw the error instead of falling back to unsecured client
+      rethrow;
     }
 
     return _clientInstance!;

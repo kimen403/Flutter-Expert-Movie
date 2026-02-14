@@ -15,6 +15,7 @@ import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
 import 'package:ditonton/common/state_enum.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -104,6 +105,8 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.save_alt),
               title: Text('Watchlist'),
               onTap: () {
+                FirebaseCrashlytics.instance
+                    .log('Navigating to Watchlist Page');
                 Navigator.pop(context);
                 if (_selectedIndex == 0) {
                   Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
